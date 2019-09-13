@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BAI3Service } from '../service/BAI3.service';
+
 
 @Component({
   selector: 'app-bai3',
@@ -33,7 +33,7 @@ export class Bai3Component implements OnInit {
       price: 900000
     }
   ];
-  constructor(private ex3 : BAI3Service) { }
+  constructor() { }
   quantities={} ;
   ngOnInit() {
   /*   this.ex3.getdata().subscribe(

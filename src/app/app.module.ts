@@ -14,7 +14,7 @@ import { NavComponent } from './nav/nav.component';
 import { Bai1Component } from './Chuong I/bai1/bai1.component';
 import { Bai2Component } from './Chuong I/bai2/bai2.component';
 import { Bai3Component } from './Chuong I/bai3/bai3.component';
-import { BAI3Service } from './Chuong I/service/BAI3.service';
+
 import { CartService } from './Chuong I/service/cart.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { GioHangComponent } from './Chuong I/giohang/giohang.component';
@@ -52,7 +52,7 @@ import { DetailComponent } from './Chuong2/detail/detail.component';
     RatingModule,
     
   ],
-  providers: [BAI3Service,CartService],
+  providers: [CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
