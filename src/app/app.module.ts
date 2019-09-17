@@ -21,9 +21,9 @@ import { GioHangComponent } from './Chuong I/giohang/giohang.component';
 import { NavBtComponent } from './Chuong I/nav-bt/nav-bt.component';
 import { SinhvienComponent } from './Chuong2/sinhvien/sinhvien.component';
 import { DetailComponent } from './Chuong2/detail/detail.component';
-
-
-
+import { HomeComponent } from './Chuong3/home/home.component';
+import { TrangchuComponent } from './Chuong3/trangchu/trangchu.component';
+import { DetaiChuong3Component } from './Chuong3/detai-chuong3/detai-chuong3.component';
 
 @NgModule({
   declarations: [
@@ -38,9 +38,11 @@ import { DetailComponent } from './Chuong2/detail/detail.component';
     NavBtComponent,
     SinhvienComponent,
     DetailComponent,
-    
-    
-    
+    HomeComponent,
+    TrangchuComponent,
+    DetaiChuong3Component,
+   
+   
   ],
   imports: [
     BrowserModule,

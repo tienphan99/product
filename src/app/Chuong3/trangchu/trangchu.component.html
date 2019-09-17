@@ -1,0 +1,140 @@
+<div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav" >
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+    
+                        <a class="nav-link" href="#" [routerLink]='["/lab/trangchu"]'> <i class='fas fa-home' style='font-size:24px'></i> Trang
+                            Chủ</a>
+                    </li>
+                    <li class="nav-item " >
+                        <!--thêm active nó sẽ kh lick được  nav-item active-->
+                        <a class="nav-link" href="#"><i style="font-size:24px" class="fa">&#xf03a;</i> Giới Thiệu
+                            <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class='fas fa-phone' style='font-size:24px'></i>
+                            Liên Hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class='far fa-envelope' style='font-size:24px'></i> Góp
+                            Ý</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><i class='far fa-question-circle'
+                                style='font-size:24px'></i>
+                            Hỏi Đáp</a>
+                    </li>
+                </ul>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Tài Khoản
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Đăng Nhập</a>
+                        <a class="dropdown-item" href="#">Tìm Tài Khoản</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="row mt-4">
+        <div class="col-sm-9 row">
+            <div class="card col-4" style="border: none; " *ngFor="let product of listProducts" >
+                <img [src]='product.imageUrl' class="card-img-top" alt="..."  height="200px">
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.tenhang }}</h5>
+                  <p class="card-text">{{ product.nhacungcap }}</p>
+                  <a href="#" class="btn btn-primary" [routerLink]='["/Chuong3/product/", product.id]'>Detail</a>
+                </div>
+            </div>
+    
+        </div>
+    
+    
+            <div class="col-sm-3 mr-0">
+                <div class="giohang" style="padding-top: 20px">
+                    <div class=" card">
+                        <div class="card-body">
+                            <tr *ngFor='let products of shopping | filter:temp' data-target="#exampleModalCenter,#fsModal"
+                                data-toggle="modal"
+                                (click)="showModal(products.productName,products.productCode,products.releaseDate,products.price,products.description,products.starRating,products.imageUrl)">
+                                <td>
+                                    <!-- <img *ngIf="isEdit" [src]="products.urlImage" alt="" width="40px" height="40px"> -->
+                                    <!-- <img *ngIf="isEdit" src="{{products.imageUrl}}" width="30px"> -->
+                                </td>
+    
+                            </tr>
+                            <p>
+    
+                                100 items<br>
+                                & 56.8<br>
+                                <a href="#">View cart</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="from">
+                    <div class="row" style="border: 2px solid lightgrey; margin: 1em 0 1em 0">
+                        <div class="col-sm-12" style="margin-top: 1em; margin-bottom: 1em">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Keywords">
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <ul class="list-group">
+                        <li class="list-group-item" data-toggle="collapse" data-target="#demo"><i style="font-size:24px"
+                                class="fa">&#xf03a;</i> CHỦNG LOẠI</li>
+                        <div id="demo" class="collapse">
+                            <ul class="list-group">
+                                <li class="list-group-item" [routerLink]="['/dienthoai']">Điện thoại di động</li>
+                                <li class="list-group-item">Máy tính xách tay</li>
+                                <li class="list-group-item">Máy tính để bàn</li>
+                                <li class="list-group-item">Quạt máy</li>
+                                <li class="list-group-item">Tivi</li>
+                                <li class="list-group-item">Tủ lạnh</li>
+                            </ul>
+                        </div>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item" data-toggle="collapse" data-target="#station">
+                            <i class='fas fa-table' style='font-size:24px'></i> NHÀ CUNG CẤP</li>
+                        <div id="station" class="collapse">
+                            <ul class="list-group">
+                                <li class="list-group-item">Acer</li>
+                                <li class="list-group-item">Dell</li>
+                                <li class="list-group-item">Asus</li>
+                                <li class="list-group-item">Vivo</li>
+                                <li class="list-group-item">Apple</li>
+                                <li class="list-group-item">Balenciaga</li>
+                            </ul>
+                        </div>
+                    </ul>
+                    <ul class="list-group">
+                        <li class="list-group-item" data-toggle="collapse" data-target="#station1">
+                            <i class='fas fa-star' style='font-size:24px'></i> HÀNG ĐẶC BIỆT</li>
+                        <div id="station1" class="collapse">
+                            <ul class="list-group">
+                                <li class="list-group-item">Hàng bán chạy</li>
+                                <li class="list-group-item">Hàng mới</li>
+                                <li class="list-group-item">Hàng giảm giá</li>
+                                <li class="list-group-item">Hàng đặc biệt</li>
+                                <li class="list-group-item">Hàng xem nhiều</li>
+                                <li class="list-group-item">Hàng nóng</li>
+                            </ul>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+
+    
+    
