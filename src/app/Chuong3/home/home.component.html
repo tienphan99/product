@@ -39,7 +39,7 @@
                     <div class="card-body">
                         <tr *ngFor='let products of shopping | filter:temp' data-target="#exampleModalCenter,#fsModal"
                             data-toggle="modal"
-                            (click)="showModal(products.productName,products.productCode,products.releaseDate,products.price,products.description,products.starRating,products.imageUrl)">
+                            >
                             <td>
                                 <!-- <img *ngIf="isEdit" [src]="products.urlImage" alt="" width="40px" height="40px"> -->
                                 <!-- <img *ngIf="isEdit" src="{{products.imageUrl}}" width="30px"> -->
