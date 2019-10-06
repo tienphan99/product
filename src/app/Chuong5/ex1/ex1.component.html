@@ -1,0 +1,22 @@
+<app-nav1></app-nav1>
+<h3 style="text-align: center">Tinh Hinh Chu Nhat</h3>
+<form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Chieu Dai</label>
+      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="chieu dai" [(ngModel)]="cd" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Chieu Rong</label>
+      <input type="number" class="form-control" id="exampleInputPassword1" placeholder="chieu rong" [(ngModel)]="cr" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Chu Vi</label>
+        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="chu vi" [(ngModel)]="cv" [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Dien Tich</label>
+        <input type="number" class="form-control" id="exampleInputPassword1" placeholder="dien tich" [(ngModel)]="dt" [ngModelOptions]="{standalone: true}">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="tinhcv();">Submit</button>
+</form>
+

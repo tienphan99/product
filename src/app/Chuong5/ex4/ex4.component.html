@@ -1,0 +1,37 @@
+<app-nav1></app-nav1>
+<div class="card" style="margin-top: 15px">
+    <div class="card-header">
+      BÁN HÀNG GIẢI KHÁT
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <th>Tên Hàng</th>
+                <th>Số Lượng</th> 
+                <th>Đơn Giá</th>
+                <th>Thành Tiền</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let dulieu of items">
+                    <td>
+                        <input type="checkbox" [(ngModel)]="checked[dulieu.id]">
+                        {{dulieu.name}}
+                    </td>
+                    <td>
+                        <input [disabled]="!checked[dulieu.id]" [id]="dulieu.id" type="text" [(ngModel)]="quantity[dulieu.id]"  (input)="onChange(dulieu.id)">
+                    </td>
+                    <td>
+                        {{ dulieu.price | currency:"VND" }}
+                    </td>
+                    <td>
+                        {{ dulieu.price * quantity[dulieu.id] | currency:"VND" }}
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+
+    <div class="card-footer">
+        Tổng Tiền: {{ total | currency:"VND"}}
+  </div>

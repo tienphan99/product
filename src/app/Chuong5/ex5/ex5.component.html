@@ -1,0 +1,54 @@
+<app-nav1></app-nav1>
+<div class="card" style="width: 80%; margin-top: 15px">
+    <div class="card-header" style="text-align: center;background-color: gray">
+        Tính thưởng tết
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label for="fullName">Họ và tên</label>
+                <input type="text" id="fullName" name="name" class="form-control" [(ngModel)]="name" required (input)="onChangeName()">
+                <div class="alert alert-primary alert-sm" *ngIf="name === '' || !name">Vui lòng nhập họ tên</div>
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Lương</label>
+                <input type="text" id="salary" name="salary" class="form-control" [(ngModel)]="salary" (input)="onChangeSalary()">
+                <div class="alert alert-danger alert-sm" *ngIf="!salary">Lương ít nhất 2 triệu</div>
+                <div class="alert alert-danger alert-sm" *ngIf="salary && salary < 2000000">Lương ít nhất 2 triệu</div>
+                <div class="alert alert-danger alert-sm" *ngIf="salary && !isSalary">Salary is a Number</div>
+            </div>
+
+            <div class="form-group">
+                <label for="fullName">Giới tính</label>
+                <div class="input-group">
+                    <input type="radio"  name="gender" (change)="onChangeGender(1)">
+                    <label class="ml-3" for="">Nam</label>
+                    <input type="radio" class="ml-5" name="gender"  (change)="onChangeGender(0)"> 
+                    <label class="ml-3" for="">Nữ</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Độ tuổi</label>
+                    <select class="form-control" name="group-age" [(ngModel)]="groupAge">
+                        <option value="1">Dưới 25 tuổi</option>
+                        <option value="2">Từ 25 đến 40</option>
+                        <option value="3">Trên 40</option>
+                    </select>
+                </div>
+        </form>
+        <div class="alert alert-success" *ngIf="salary > 2000000 && groupAge && gender">
+            Success
+        </div>
+    </div>
+
+    <div class="card-footer" style="text-align: center;background-color: gray">
+        TIỀN THƯỞNG: 
+        <span *ngIf="!salary && !groupAge">{{ 0 | currency:"VND"}}</span>
+        <span *ngIf="salary && !groupAge">{{ salary | currency:"VND" }}</span>
+        <span *ngIf="groupAge === '1'">{{ salary * 1.7 | currency:"VND" }}</span>
+        <span *ngIf="groupAge === '2'">{{ salary * 2 | currency:"VND" }}</span>
+        <span *ngIf="groupAge === '3'">{{ salary * 2.5 | currency:"VND" }}</span>
+    </div>
+  </div>

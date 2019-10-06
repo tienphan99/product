@@ -1,0 +1,47 @@
+<app-nav1></app-nav1>
+<div class="card" style="width: 70%; margin-top: 20px">
+    <div class="card-header" style="text-align: center; background-color: dimgray">
+     Tính thưởng tết
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+                <label for="fullName">Họ và tên</label>
+                <input type="text" id="fullName" name="name" class="form-control" [(ngModel)]="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="salary">Lương</label>
+                <input type="text" id="salary" name="salary" class="form-control" [(ngModel)]="salary" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fullName">Giới tính</label>
+                <div class="input-group">
+                    <input type="radio"  name="gender" (change)="onChangeGender(1)">
+                    <label class="ml-3" for="">Nam</label>
+                    <input type="radio" class="ml-5" name="gender"  (change)="onChangeGender(0)"> 
+                    <label class="ml-3" for="">Nữ</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Độ tuổi</label>
+                    <select class="form-control" name="group-age" [(ngModel)]="groupAge">
+                        <option value="1">Dưới 25 tuổi</option>
+                        <option value="2">Từ 25 đến 40</option>
+                        <option value="3">Trên 40</option>
+                    </select>
+                </div>
+        </form>
+    </div>
+
+    <div class="card-footer" style="text-align: center; background-color: dimgray">
+        TIỀN THƯỞNG: 
+        <span *ngIf="!salary">0</span>
+        <span *ngIf="salary && !groupAge">{{ salary | currency:"VND" }}</span>
+        <span *ngIf="groupAge === '1'">{{ salary * 1.7 | currency:"VND" }}</span>
+        <span *ngIf="groupAge === '2'">{{ salary * 2 | currency:"VND" }}</span>
+        <span *ngIf="groupAge === '3'">{{ salary * 2.5 | currency:"VND" }}</span>
+    </div>
+  </div>
