@@ -18,6 +18,8 @@ import { Ex2Component } from './Chuong5/ex2/ex2.component';
 import { Ex3Component } from './Chuong5/ex3/ex3.component';
 import { Ex4Component } from './Chuong5/ex4/ex4.component';
 import { Ex5Component } from './Chuong5/ex5/ex5.component';
+import { Bai6Component } from './Chuong6/bai6/bai6.component';
+import { Detailbai6Component } from './Chuong6/detailbai6/detailbai6.component';
 
 const routes: Routes = [
   { path: 'Chuong I', component: NavBtComponent},
@@ -42,8 +44,9 @@ const routes: Routes = [
   { path: 'Chuong5/ex3', component: Ex3Component},
   { path: 'Chuong5/ex4', component: Ex4Component},
   { path: 'Chuong5/ex5', component: Ex5Component},
-  
 
+  { path: 'Chuong6', component: Bai6Component},
+  { path: 'Chuong6/bai6/detailbai6', component: Detailbai6Component},
 ];
 
 @NgModule({
