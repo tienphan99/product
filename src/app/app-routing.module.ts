@@ -20,6 +20,11 @@ import { Ex4Component } from './Chuong5/ex4/ex4.component';
 import { Ex5Component } from './Chuong5/ex5/ex5.component';
 import { Bai6Component } from './Chuong6/bai6/bai6.component';
 import { Detailbai6Component } from './Chuong6/detailbai6/detailbai6.component';
+import { Bai7Component } from './Chuong7/bai7/bai7.component';
+import { Home1Component } from './Chuong8/home1/home1.component';
+import { DetailGuitarComponent } from './Chuong8/detail-guitar/detail-guitar.component';
+import { CartComponent } from './Chuong8/cart/cart.component';
+import { CheckoutComponent } from './Chuong8/checkout/checkout.component';
 
 const routes: Routes = [
   { path: 'Chuong I', component: NavBtComponent},
@@ -47,6 +52,11 @@ const routes: Routes = [
 
   { path: 'Chuong6', component: Bai6Component},
   { path: 'Chuong6/bai6/detailbai6', component: Detailbai6Component},
+  { path: 'Chuong7', component: Bai7Component},
+  { path: 'Chuong8', component: Home1Component},
+  { path: 'Chuong8/guitar/:id', component: DetailGuitarComponent},
+  { path: 'Chuong8/cart', component: CartComponent},
+  { path: 'Chuong8/checkout', component: CheckoutComponent},
 ];
 
 @NgModule({

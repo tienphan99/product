@@ -1,0 +1,75 @@
+<div  class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="nav-side-menu">
+                <div class="brand">Menu</div>
+                <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+                <div class="menu-list">
+                    <ul id="menu-content" class="menu-content collapse out">
+                        <li data-toggle="collapse" data-target="#new" class="collapsed">
+                            <i class="fa fa-car fa-lg"></i> Link <span class="arrow"></span>
+                        </li>
+                        <ul class="sub-menu collapse" id="new">
+                            <li><a [routerLink]='["/Chuong8/cart"]'>View Cart</a></li>
+                            <li><a href="#">Login/Register</a></li>
+                            <li><a [routerLink]='["/Chuong8"]'>Home</a></li>
+                        </ul>
+                        <li data-toggle="collapse" data-target="#new" class="collapsed">
+                            <i class="fa fa-car fa-lg"></i> Categories <span class="arrow"></span>
+                        </li>
+                        <ul class="sub-menu collapse" id="new">
+                            <li><a href="#">Guitars</a></li>
+                            <li><a href="#">Pianos</a></li>
+                            <li><a href="#">Drums</a></li>
+                            <li><a href="#">Cymbal</a></li>
+                        </ul>
+                        <li data-toggle="collapse" data-target="#new" class="collapsed">
+                            <i class="fa fa-car fa-lg"></i> Temp Link <span class="arrow"></span>
+                        </li>
+                        <ul class="sub-menu collapse" id="new">
+                            <li ><a href="#"> Admin</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-md-offset-1">
+            <h2 class="text-warning">Your Order</h2>
+        <p>Order number:4 </p>
+        <p>Order Date:Oct9,2019</p>
+
+        <h4 class="text-warning">Shiping</h4>
+        <p>Ship date</p>
+        123 California
+        <h4 class="text-warning">Billing</h4>
+        <p>Card Number:4444</p>
+        123 California
+        <h4 class="text-warning">Ordre Item</h4>
+        <table class="table">
+            <thead>
+                <th>Item</th>
+                <th>List Price</th>
+                <th>Savings</th>
+                <th>Your Cost</th>
+                <th>Quantity</th>
+                <th>Line Total</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="5" class="text-right">Subtotal</td>
+                </tr>
+
+                <tr>
+                    <td colspan="5" class="text-right">CA tax</td>
+                </tr>
+
+                <tr>
+                    <td colspan="5" class="text-right">Shiping</td>
+                </tr>
+                    
+                <tr>
+                    <td colspan="5" class="text-right">Total</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>

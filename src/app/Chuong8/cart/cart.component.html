@@ -1,0 +1,31 @@
+<table class="table my-4">
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <th scope="row">{{item.productname}}</th>
+        <td>{{item.price}}</td>
+        <td>{{quantity()}}</td>
+        <td>{{item.price * quantity()}}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Total :</td>
+      </tr>
+      
+    </tbody>
+    <p>Return to: <a routerLink="/Chuong8">Home</a></p>
+    <p>Return to: <a routerLink="#">Guitars</a></p>
+    <p>Proceed to: <a routerLink="/Chuong8/checkout">Checkout</a></p>
+  </table>
+  <div>
+    <button (click)="clearcart()" class="btn btn-primary">Clear Cart</button>
+  </div>

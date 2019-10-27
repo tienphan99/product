@@ -1,0 +1,58 @@
+<div  class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="nav-side-menu">
+                    <div class="brand">Menu</div>
+                    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+                    <div class="menu-list">
+                        <ul id="menu-content" class="menu-content collapse out">
+                            <li data-toggle="collapse" data-target="#new" class="collapsed">
+                                <i class="fa fa-car fa-lg"></i> Link <span class="arrow"></span>
+                            </li>
+                            <ul class="sub-menu collapse" id="new">
+                                <li><a [routerLink]='["/Chuong8/cart"]'>View Cart</a></li>
+                                <li><a href="#">Login/Register</a></li>
+                                <li><a [routerLink]='["/Chuong8"]'>Home</a></li>
+                            </ul>
+                            <li data-toggle="collapse" data-target="#new" class="collapsed">
+                                <i class="fa fa-car fa-lg"></i> Categories <span class="arrow"></span>
+                            </li>
+                            <ul class="sub-menu collapse" id="new">
+                                <li *ngFor='let guitar of listGuitar'><a routerLink="/Chuong8/guitar/{{guitar.id}}"> {{ guitar.catename }}</a></li>
+                            </ul>
+                            <li data-toggle="collapse" data-target="#new" class="collapsed">
+                                <i class="fa fa-car fa-lg"></i> Temp Link <span class="arrow"></span>
+                            </li>
+                            <ul class="sub-menu collapse" id="new">
+                                <li ><a href="#"> Admin</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 col-md-offset-1">
+                <h1 style="background-color: darkgoldenrod">My Guitar Shop</h1>
+                <p >
+                    Guitar là một loại chordophone, 
+                    theo truyền thống được làm từ gỗ và dùng dây bằng ruột động vật,
+                    nylon hoặc dây thép và phân biệt với các chordophone khác bằng cách làm và cách chỉnh âm.
+                    Cây đàn guitar hiện đại được kế thừa từ các loại đàn gittern, vihuela
+                    , guitar bốn thời Phục hưng, và guitar 5 thời baroque, tất cả đều góp phần vào sự phát triển của nhạc cụ sáu dây hiện đại này.
+                </p>
+            
+
+            <h2 style="color: sandybrown;">Sản phẩm nổi bật</h2>
+            <div class="row" *ngFor='let guitar of listGuitar'>
+            <div class="col-lg-4 col-md-6 mb-4" >
+            <img src="{{ guitar.Logo }}" alt="" style="height: 200px;">
+            </div>
+            <div class="col-md-1 col-md-6 " >
+                <a routerLink="/Chuong8/guitar/{{guitar.id}}"> {{guitar.productname }}</a>
+                <br><strong>You price:</strong>${{guitar.price}}
+                <br>{{guitar.description}}
+            </div>
+            
+            </div>
+            </div>
+        </div>
+    </div>

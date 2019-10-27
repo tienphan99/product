@@ -1,0 +1,63 @@
+<div class="container">
+        <h2 style="text-align: center;">Thêm sinh viên</h2>
+        <br>
+        <form>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Họ và Tên:</label>
+                <div class="col-sm-4">
+                    <input type="text" (change)="onChangeName($event.target.value)" value="{{formStudent.fullName}}"
+                        class="form-control" id="inputPassword" placeholder="Họ và Tên">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Ngày Sinh:</label>
+                <div class="col-sm-8">
+                    <input type="datetime" value="{{formStudent.birthday && formStudent.birthday.toLocaleDateString()}}"
+                        class="form-control" id="inputPassword" placeholder="mm/dd/yy">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Điểm</label>
+                <div class="col-sm-3">
+                    <input type="number" value="{{formStudent.mark}}" class="form-control" id="inputPassword"
+                        placeholder="0">
+                </div>
+            </div>
+        </form>
+        <button type="button" class="btn btn-success btn-block"
+            (click)="isEdit ? saveInfo(formStudent.id) : createInfo()">{{isEdit ? 'Lưu' : 'Thêm'}}</button>
+        <button type="button" class="btn btn-danger btn-block" (click)="clearInfo()">Hủy</button>
+    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">FullName</th>
+                    <th scope="col">Birthday</th>
+                    <th scope="col">Marks</th>
+                    <th scope="col">Rate</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of students ">
+    
+                    <!-- <td>
+                            <img *ngIf="visibleImage" [src]="product.imageUrl" alt="" width="50px" height="45px">
+                        </td> -->
+                    <td>{{student.id}}</td>
+                    <td>{{student.fullName}}</td>
+                    <td>{{student.birthday.toLocaleDateString()}}</td>
+                    <td>{{student.mark}}</td>
+                    <td>{{student.mark < 5 ? 'Yếu' : student.mark >= 5 && student.mark <= 8 ? 'TrungBình/Khá' : 'Giỏi'}}
+    
+                    </td>
+                    <td><button type="button" class="btn btn-primary" (click)="sua(student.id)">Sửa</button>
+                        <button type="button" class="btn btn-danger" (click)="removeWord(student.id)">Xóa</button>
+                    </td>
+                </tr>
+    
+            </tbody>
+        </table>
+    </div>
+    
